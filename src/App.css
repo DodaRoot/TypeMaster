@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+#root {
+  background-color: grey;
+  margin: 0 auto;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  right: 5%;
+  left: 5%;
+  padding: 1% 2%;
+  max-width: 900px;
+  min-width: 700px;
+}
+
+p,
+a {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.navBar,
+.content,
+.keyboard,
+.displays {
+  margin: 2% 0;
+}
+
+button {
+  all: unset;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  height: 8vh;
+}
+
+.navBar div {
+  display: flex;
+  align-items: center;
+}
+
+.levels {
+  padding: 2% 2.5%;
+  width: 30%;
+  background-color: white;
+  text-align: center;
+  justify-content: center;
+}
+
+.heading {
+  padding: 2% 5%;
+  width: 50%;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30vh;
+}
+
+.mainText {
+  width: 40%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainText p {
+  margin: 10px;
+}
+
+.mainImage {
+  width: 55%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.keyboard {
+  height: 30vh;
+  background-color: white;
+}
+
+.displays {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.time,
+.reset {
+  width: 30%;
+  height: 7vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
