@@ -4,6 +4,8 @@
   background-color: grey;
   margin: 0 auto;
   position: absolute;
+  height: fit-content;
+  width: fit-content;
   top: 5%;
   bottom: 5%;
   right: 5%;
@@ -11,6 +13,8 @@
   padding: 1% 2%;
   max-width: 900px;
   min-width: 700px;
+  max-height: 900px;
+  min-height: 450px;
 }
 
 p,
@@ -97,6 +101,10 @@ button {
 .keyboard {
   height: 30vh;
   background-color: white;
+}
+
+.keyboard-focus {
+  outline: 2px solid red;
 }
 
 .displays {

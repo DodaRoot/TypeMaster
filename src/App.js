@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
+import Keyboard from "./Keyboard";
 
 function App() {
   let [dropDown, setDropDown] = useState("levelDropDownHidden");
@@ -44,7 +45,7 @@ function App() {
           <img src="type.jpg"></img>
         </div>
       </div>
-      <div className="keyboard"></div>
+      <Keyboard />
       <div className="displays">
         <div className="time">
           <p>Time / 0:00</p>
