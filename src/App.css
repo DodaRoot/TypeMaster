@@ -101,6 +101,14 @@ button {
 .keyboard {
   height: 30vh;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyboard p {
+  pointer-events: none;
+  margin: 0px 15px;
 }
 
 .keyboard-focus {
