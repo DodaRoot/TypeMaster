@@ -107,8 +107,12 @@ button {
 }
 
 .keyboard p {
+  text-align: center;
   pointer-events: none;
-  margin: 0px 15px;
+}
+
+.keyboard .highlight {
+  background-color: red;
 }
 
 .keyboard-focus {

@@ -6,7 +6,7 @@ function App() {
   let [dropDown, setDropDown] = useState("levelDropDownHidden");
 
   const dropClickEvent = () => {
-    dropDown == "levelDropDownHidden"
+    dropDown === "levelDropDownHidden"
       ? setDropDown("levelDropDownShow")
       : setDropDown("levelDropDownHidden");
   };
@@ -28,7 +28,7 @@ function App() {
           </div>
         </div>
         <div className="heading">
-          <a>TypeMaster.com</a>
+          <a href="google.com">TypeMaster.com</a>
           <button>
             <p>SignUp</p>
           </button>
@@ -42,7 +42,7 @@ function App() {
           </p>
         </div>
         <div className="mainImage">
-          <img src="type.jpg"></img>
+          <img src="type.jpg" alt="typeImg"></img>
         </div>
       </div>
       <Keyboard />
