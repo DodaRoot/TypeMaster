@@ -46,14 +46,6 @@ function App() {
         </div>
       </div>
       <Keyboard />
-      <div className="displays">
-        <div className="time">
-          <p>Time / 0:00</p>
-        </div>
-        <button className="reset">
-          <p>Reset</p>
-        </button>
-      </div>
     </div>
   );
 }
