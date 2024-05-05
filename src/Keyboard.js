@@ -3,24 +3,39 @@ import React, { useState, useEffect, useCallback } from "react";
 
 let focus = false;
 let exampleArray = ["a", "s", "d", "f"];
-let i = 0;
+let a = 0;
 let firstKeyPress = false;
 let seconds = 0;
 let minutes = 0;
+let word = "";
+
+let lengthOfWord = Math.floor(Math.random() * 2) + 4;
+let length = 0;
+for (let i = 0; i < 132; i++) {
+  let randomLetter = Math.floor(Math.random() * exampleArray.length);
+  if (length > lengthOfWord) {
+    length = 0;
+    lengthOfWord = Math.floor(Math.random() * 2) + 4;
+    word += " ";
+  } else {
+    word += exampleArray[randomLetter];
+  }
+  length++;
+}
 
 function Keyboard() {
+  let [finish, setFinish] = useState("");
   let [keyboardHighlight, setKeyboardHighlight] = useState("");
-  let [displayWord, setDisplayWord] = useState([]);
-  let [highlightWord, setHighlightWord] = useState([]);
+  let [displayWord, setDisplayWord] = useState(word);
+  let [highlightWord, setHighlightWord] = useState("");
   let [mistakes, setMistakes] = useState(0);
   let [timer, setTimer] = useState("0:00");
 
-  const timerSet = () => {
+  const timerSet = useCallback(() => {
     setInterval(() => {
-      console.log(".");
       displayTime();
     }, 1000);
-  };
+  }, []);
 
   const resetTimer = () => {
     if (firstKeyPress) {
@@ -47,34 +62,21 @@ function Keyboard() {
         timerSet();
         firstKeyPress = true;
       }
-      if (e.key === displayWord[i]) {
-        let display = [...displayWord].slice(i + 1);
-        let highlight = [...displayWord].slice(0, i + 1);
+      if (e.key === word[a]) {
+        a++;
+        let display = word.slice(a);
+        let highlight = word.slice(0, a);
         setDisplayWord(display);
         setHighlightWord(highlight);
-        i++;
+        if (display.length === 0) {
+          setFinish("finish");
+        }
       } else {
-        setMistakes((mistakes += 1));
+        setMistakes((e) => (e += 1));
       }
     },
-    [displayWord]
+    [timerSet]
   );
-
-  useEffect(() => {
-    let lengthOfWord = Math.floor(Math.random() * 2) + 4;
-    let length = 0;
-    for (let i = 0; i < 132; i++) {
-      let randomLetter = Math.floor(Math.random() * exampleArray.length);
-      if (length > lengthOfWord) {
-        length = 0;
-        lengthOfWord = Math.floor(Math.random() * 2) + 4;
-        setDisplayWord((prev) => [...prev, " "]);
-      } else {
-        setDisplayWord((prev) => [...prev, exampleArray[randomLetter]]);
-      }
-      length++;
-    }
-  }, []);
 
   const mouseTarget = useCallback(
     (e) => {
@@ -104,7 +106,7 @@ function Keyboard() {
 
   return (
     <div>
-      <div className={`keyboard ${keyboardHighlight}`}>
+      <div className={`keyboard ${keyboardHighlight} ${finish}`}>
         <p>
           <span className="highlight">{highlightWord}</span>
           <span>&zwnj;</span>
